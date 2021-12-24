@@ -1,0 +1,75 @@
+[PMC Globals]|None||
+[PMC Code v5.4.1]|F3||0|Window,2,Fast,0,1,Input,-1,-1,1|1|Battle
+Context=None|
+Groups=Start:1,NOBLE:5,BASIC:15,BATTLE_RESULTS:27,RR:42,BUY AP:46,SUPPORT_SELECT:56
+1||1520, 779, 1747, 966, 0x00D4ED, 0, Fast RGB|1|0|PixelSearch||Window|@SEARCH FOR BATTLE BUTTON||1|
+2|If Image/Pixel Found||1|0|If_Statement|||@IF BATTLE BUTTON FOUND|0x008000|5|
+3|Move|1636, 892, 0|1|0|Click|||-> MOVE TO BUTTON||7|
+4|Left Click|Left, 1, |1|444|Click|||X-> CLICK ON BUTTON||8|
+5|[Pause]||1|888|Sleep|||||10|
+6|Continue, Continue, FoundX, FoundY|684, 256, 1425, 480, 0xFFFFFF, 0, Fast RGB|1|10|PixelSearch||Window|SERACH FOR NOBLE FANTASM CARD||11|
+7|If Image/Pixel Found||1|0|If_Statement|||DO ON FIND||14|
+8|Move|1281, 330, 0|1|222|Click|||||16|
+9|Left Click|Left, 1, |1|0|Click|||||18|
+10|Move|932, 324, 0|1|66|Click|||||19|
+11|Left Click|Left, 1, |1|0|Click|||||21|
+12|Move|610, 404, 0|1|66|Click|||||22|
+13|Left Click|Left, 1, |1|0|Click|||||24|
+14|[End If]|EndIf|1|0|If_Statement|||-------------------------------||25|
+15|Move|1656, 743, 0|1|44|Click|||1ST_CARD||26|
+16|Left Click|Left, 1, |1|44|Click|||1ST_CARD||28|
+17|Move|1310, 799, 0|1|44|Click|||2ND_CARD||30|
+18|Left Click|Left, 1, |1|44|Click|||2ND_CARD||32|
+19|Move|951, 736, 0|1|44|Click|||3RD_CARD||34|
+20|Left Click|Left, 1, |1|44|Click|||3RD_CARD||36|
+021|Move|601, 755, 0|1|44|Click|||DEBUG_4RD_CARD||38|
+022|Left Click|Left, 1, |1|44|Click|||DEBUG_4RD_CARD||41|
+023|Move|268, 775, 0|1|44|Click|||DEBUG_5TH_CARD||43|
+024|Left Click|Left, 1, |1|44|Click|||DEBUG_5TH_CARD||45|
+25|[End If]|EndIf|1|0|If_Statement|||||47|
+026|If Image/Pixel Not Found||1|0|If_Statement||||0xFF8080|49|
+027|Continue, Continue, FoundX, FoundY|157, 265, 213, 318, 0xEDC327, 0, Fast RGB|1|0|PixelSearch||Window|@SEARCH_FOR_BATTLE_RESULTS||52|
+028|If Image/Pixel Found||1|0|If_Statement|||||54|
+029|Move|924, 908, 0|1|222|Click|||||56|
+030|Left Click|Left, 1, |1|222|Click|||||58|
+031|Move|977, 932, 0|1|222|Click|||||60|
+032|Left Click|Left, 1, |1|222|Click|||||62|
+033|Move|1607, 929, 0|1|222|Click|||||64|
+034|Left Click|Left, 1, |1|100|Click|||||66|
+035|Left Click|Left, 1, |1|100|Click|||||68|
+036|Left Click|Left, 1, |1|100|Click|||||70|
+037|Left Click|Left, 1, |1|100|Click|||||72|
+038|Left Click|Left, 1, |1|100|Click|||||74|
+039|Left Click|Left, 1, |1|100|Click|||||76|
+040|Left Click|Left, 1, |1|100|Click|||||78|
+041|Left Click|Left, 1, |1|100|Click|||||80|
+042|Continue, Continue, FoundX, FoundY|1298, 793, 1307, 822, 0x000000, 0, Fast RGB|1|222|PixelSearch||Window|@ SEARCH FOR REPEAT BUTTON||82|
+043|If Image/Pixel Found||1|0|If_Statement|||???||85|
+044|Move|1231, 818, 0|1|10|Click|||HERE I NEED INSERT SOMEWERE NOT FOUND||87|
+045|Left Click|Left, 1, |1|10|Click|||||89|
+046|[Pause]||1|1000|Sleep|||||91|
+047|Continue, Continue, FoundX, FoundY|924, 879, 947, 914, 0x283067, 0, Fast RGB|1|0|PixelSearch||Window|@SEARCH_NO_AP_MESSAGE||92|
+048|If Image/Pixel Found||1|0|If_Statement|||||94|
+049|Move|966, 661, 0|1|10|Click|||||96|
+050|Left Click|Left, 1, |1|10|Click|||||98|
+051|Move|1222, 817, 0|1|10|Click|||||100|
+052|Left Click|Left, 1, |1|1000|Click|||||102|
+053|Left Click|Left, 1, |1|10|Click|||||104|
+054|[Goto]|HAVE_AP|1|0|Goto|||||106|
+055|[End If]|EndIf|1|0|If_Statement|||||107|
+056|If Image/Pixel Not Found||1|0|If_Statement|||||108|
+057|[Label]|HAVE_AP|1|0|Label|||JMP_POINT||110|
+058|[Pause]||1|4000|Sleep|||<-- THIS DEPENDS ON NETWORK||111|
+059|Move|274, 409, 0|1|10|Click|||||112|
+060|Left Click|Left, 1, |1|10|Click|||||114|
+061|[Pause]||1|2000|Sleep|||||116|
+062|Left Click|Left, 3, |1|10|Click|||||117|
+063|Left Click|Left, 3, |1|2000|Click|||||119|
+064|[Goto]|Battle|1|0|Goto|||||121|
+065|[End If]|EndIf|1|0|If_Statement|||||122|
+066|[End If]|EndIf|1|0|If_Statement|||||123|
+067|If Image/Pixel Not Found||1|0|If_Statement|||||124|
+068|[End If]|EndIf|1|0|If_Statement|||||126|
+069|[End If]|EndIf|1|0|If_Statement|||||127|
+070|[End If]|EndIf|1|0|If_Statement|||||128|
+71|[Pause]||1|1000|Sleep|||||129|
